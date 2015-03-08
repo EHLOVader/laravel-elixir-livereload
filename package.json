@@ -13,7 +13,14 @@
     "email": "",
     "url": "https://github.com/EHLOVader"
   },
-  "repository": "ehlovader/gulp-laravel-elixir-livereload",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ehlovader/laravel-elixir-livereload"
+  },
+  "bugs": {
+    "url": "https://github.com/ehlovader/laravel-elixir-livereload/issues"
+  },
+  "homepage": "https://github.com/ehlovader/laravel-elixir-livereload",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
