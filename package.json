@@ -1,10 +1,12 @@
-
 {
   "name": "gulp-laravel-elixir-livereload",
   "version": "0.0.0",
-  "description": "A plugin for Gulp",
+  "description": "An elixir wrapper for livereload",
   "keywords": [
-    "gulpplugin"
+    "laravel",
+    "elixir",
+    "livereload",
+    "gulp"
   ],
   "author": {
     "name": "Joseph Richardson",
@@ -12,21 +14,14 @@
     "url": "https://github.com/EHLOVader"
   },
   "repository": "ehlovader/gulp-laravel-elixir-livereload",
+  "main": "index.js",
   "scripts": {
-    "test": "istanbul test _mocha --report html -- test/*.js --reporter spec",
-    "coveralls": "istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly -- -R spec && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "through2": "*",
-    "gulp-util": "~2.2.0"
-  },
-  "devDependencies": {
-    "mocha": "*",
-    "coveralls": "*",
-    "mocha-lcov-reporter": "*",
-    "istanbul": "*",
-    "event-stream": "*",
-    "should": "~2.1.0"
+    "gulp-livereload": "^3.8.0",
+    "gulp-util": "~2.2.0",
+    "through2": "*"
   },
   "engines": {
     "node": ">=0.8.0",
