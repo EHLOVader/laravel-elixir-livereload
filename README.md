@@ -24,14 +24,12 @@ elixir(function (mix) {
 
 Live reload also uses a script file so add the following to your blade template.
 
-```
-	@if ( Config::get('app.debug') )
-	<!-- build:remove(public,.) -->
-	<script type="text/javascript">
-		document.write('<script src="//localhost:35729/livereload.js?snipver=1" type="text/javascript"><\/script>')
-	</script>
-	<!-- endBuild -->
-	@endif
+```php
+@if ( Config::get('app.debug') )
+  <script type="text/javascript">
+    document.write('<script src="//localhost:35729/livereload.js?snipver=1" type="text/javascript"><\/script>')
+  </script>
+@endif
 ```
 
 ## API
