@@ -3,7 +3,7 @@
 
 ## Usage
 
-First, install `gulp-laravel-elixir-livereload` as a development dependency:
+First, install `laravel-elixir-livereload` as a development dependency:
 
 ```shell
 npm install --save-dev gulp-laravel-elixir-livereload
@@ -12,7 +12,7 @@ npm install --save-dev gulp-laravel-elixir-livereload
 Then, add it to your `gulpfile.js`:
 
 ```javascript
-var laravel-elixir-livereload = require("gulp-laravel-elixir-livereload");
+var laravel-elixir-livereload = require("laravel-elixir-livereload");
 
 gulp.src("./src/*.ext")
 	.pipe(laravel-elixir-livereload({
@@ -36,14 +36,7 @@ The message you wish to attach to file.
 
 [MIT License](http://en.wikipedia.org/wiki/MIT_License)
 
-[npm-url]: https://npmjs.org/package/gulp-laravel-elixir-livereload
-[npm-image]: https://badge.fury.io/js/gulp-laravel-elixir-livereload.png
+[npm-url]: https://npmjs.org/package/laravel-elixir-livereload
+[npm-image]: https://badge.fury.io/js/laravel-elixir-livereload.png
 
-[travis-url]: http://travis-ci.org/ehlovader/gulp-laravel-elixir-livereload
-[travis-image]: https://secure.travis-ci.org/ehlovader/gulp-laravel-elixir-livereload.png?branch=master
 
-[coveralls-url]: https://coveralls.io/r/ehlovader/gulp-laravel-elixir-livereload
-[coveralls-image]: https://coveralls.io/repos/ehlovader/gulp-laravel-elixir-livereload/badge.png
-
-[depstat-url]: https://david-dm.org/ehlovader/gulp-laravel-elixir-livereload
-[depstat-image]: https://david-dm.org/ehlovader/gulp-laravel-elixir-livereload.png
