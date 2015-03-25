@@ -12,22 +12,39 @@ npm install --save-dev gulp-laravel-elixir-livereload
 Then, add it to your `gulpfile.js`:
 
 ```javascript
-var laravel-elixir-livereload = require("laravel-elixir-livereload");
+var elixir = require('laravel-elixir');
+require('laravel-elixir-livereload');
 
-gulp.src("./src/*.ext")
-	.pipe(laravel-elixir-livereload({
-		msg: "Hello Gulp!"
-	}))
-	.pipe(gulp.dest("./dist"));
+elixir(function (mix) {
+
+    mix.livereload();
+
+});
+```
+
+Live reload also uses a script file so add the following to your blade template.
+
+```
+	@if ( Config::get('app.debug') )
+	<!-- build:remove(public,.) -->
+	<script type="text/javascript">
+		document.write('<script src="//localhost:35729/livereload.js?snipver=1" type="text/javascript"><\/script>')
+	</script>
+	<!-- endBuild -->
+	@endif
 ```
 
 ## API
 
-### laravel-elixir-livereload(options)
+### laravel-elixir-livereload(src)
 
-#### options.msg
-Type: `String`  
-Default: `Hello World`
+#### src
+Type: `array` or `string`  
+Default: `[
+              'app/**/*',
+              'public/**/*',
+              'resources/views/**/*'
+          ]`
 
 The message you wish to attach to file.
 
