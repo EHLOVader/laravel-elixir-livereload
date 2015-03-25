@@ -6,7 +6,7 @@
 First, install `laravel-elixir-livereload` as a development dependency:
 
 ```shell
-npm install --save-dev gulp-laravel-elixir-livereload
+npm install --save-dev laravel-elixir-livereload
 ```
 
 Then, add it to your `gulpfile.js`:
