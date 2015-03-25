@@ -4,16 +4,28 @@ var gulp = require('gulp'),
     notifications = require('laravel-elixir/ingredients/commands/Notification'),
     livereload = require('gulp-livereload');
 
-elixir.extend('livereload', function(src, output) {
+elixir.extend('livereload', function(src) {
 
-    gulp.task('livereload', function() {
-        livereload.listen();
-        gulp.on('stop', function(){
-            livereload();
-        });
-    });
+    var config = this,
+        defaultSrc = [
+            'app/**/*',
+            'public/**/*',
+            'resources/views/**/*'
+        ];
 
-    this.registerWatcher('livereload');
+
+    src = src || defaultSrc;
+
+    livereload.listen();
+
+    if (config.production === false) {
+        var watcher = gulp.watch(src);
+
+        watcher.on('change', function(event){
+            livereload.changed(event.path);
+        })
+
+    }
 
     return this.queueTask('livereload');
 
