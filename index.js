@@ -16,7 +16,9 @@ elixir.extend('livereload', function(src) {
 
     src = src || defaultSrc;
 
-    livereload.listen();
+    gulp.task('livereload', function(){
+        livereload.listen();
+    });
 
     if (config.production === false) {
         var watcher = gulp.watch(src);
