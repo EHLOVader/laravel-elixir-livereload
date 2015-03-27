@@ -17,17 +17,17 @@ elixir.extend('livereload', function(src) {
     src = src || defaultSrc;
 
     gulp.task('livereload', function(){
-        livereload.listen();
+        if (config.production === false) {
+            livereload.listen();
+            var watcher = gulp.watch(src);
+
+            watcher.on('change', function(event){
+                livereload.changed(event.path);
+            })
+
+        }
     });
 
-    if (config.production === false) {
-        var watcher = gulp.watch(src);
-
-        watcher.on('change', function(event){
-            livereload.changed(event.path);
-        })
-
-    }
 
     return this.queueTask('livereload');
 

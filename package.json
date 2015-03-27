@@ -1,6 +1,6 @@
 {
   "name": "laravel-elixir-livereload",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "An elixir wrapper for livereload",
   "keywords": [
     "laravel",
