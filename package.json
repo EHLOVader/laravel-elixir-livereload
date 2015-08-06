@@ -1,6 +1,6 @@
 {
   "name": "laravel-elixir-livereload",
-  "version": "0.0.4",
+  "version": "1.0.0",
   "description": "An elixir wrapper for livereload",
   "keywords": [
     "laravel",
@@ -28,7 +28,7 @@
   "dependencies": {
     "gulp-livereload": "^3.8.0",
     "gulp-util": "~2.2.0",
-    "laravel-elixir": "~2.3"
+    "laravel-elixir": "^3.0"
   },
   "engines": {
     "node": ">=0.8.0",
