@@ -4,7 +4,7 @@ var gulp = require('gulp'),
     config = Elixir.config;
 
 
-Elixir.extend('livereload', function (src) {
+Elixir.extend('livereload', function (src, options) {
 
     defaultSrc = [
         config.appPath + '/**/*',
@@ -21,7 +21,7 @@ Elixir.extend('livereload', function (src) {
                     livereload.changed(event.path);
                 });
 
-            livereload.listen();
+            livereload.listen(options);
         }
     });
 
