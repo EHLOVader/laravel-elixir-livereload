@@ -7,8 +7,8 @@ var gulp = require('gulp'),
 Elixir.extend('livereload', function (src) {
 
     defaultSrc = [
-        'app/**/*',
-        'public/**/*',
+        config.appPath + '/**/*',
+        config.publicPath + '/**/*',
         'resources/views/**/*'
     ];
 
