@@ -1,9 +1,7 @@
 var gulp = require('gulp'),
     Elixir = require('laravel-elixir'),
     livereload = require('gulp-livereload'),
-    config = Elixir.config,
-    GulpPaths = require('laravel-elixir').GulpPaths;
-Task = Elixir.Task;
+    config = Elixir.config;
 
 
 Elixir.extend('livereload', function (src) {
@@ -16,14 +14,15 @@ Elixir.extend('livereload', function (src) {
 
     src = src || defaultSrc;
 
-    if (config.production === false) {
-        var watcher = gulp.watch(src);
+    gulp.on('task_start', function (e) {
+        if (e.task === 'watch') {
+            gulp.watch(src)
+                .on('change', function (event) {
+                    livereload.changed(event.path);
+                });
 
-        watcher.on('change', function (event) {
-            livereload.changed(event.path);
-        })
-    }
-
-    livereload.listen();
+            livereload.listen();
+        }
+    });
 
 });
