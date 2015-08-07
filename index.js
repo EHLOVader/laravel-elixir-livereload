@@ -16,16 +16,17 @@ elixir.extend('livereload', function (src) {
 
     src = src || defaultSrc;
 
-    if (config.production === false) {
-        var watcher = gulp.watch(src);
-
-        watcher.on('change', function (event) {
-            livereload.changed(event.path);
-        })
-    }
-    gulp.task('livereload', function () {
-        livereload.listen();
+    gulp.on('task_start', function (e) {
+        if (e.task === 'watch') {
+            livereload.listen();
+            gulp.watch(src)
+                .on('change', function (event) {
+                    livereload.changed(event.path);
+                });
+        }
     });
+
+    gulp.task('livereload', function () {});
 
     this.registerWatcher('livereload');
     return this.queueTask('livereload');
