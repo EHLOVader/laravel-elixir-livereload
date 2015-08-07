@@ -26,6 +26,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
+    "gulp": "^3.8.8",
     "gulp-livereload": "^3.8.0",
     "gulp-util": "~2.2.0",
     "laravel-elixir": "^3.0"

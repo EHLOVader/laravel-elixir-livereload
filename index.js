@@ -1,18 +1,18 @@
 var gulp = require('gulp'),
-    elixir = require('laravel-elixir'),
-    utilities = require('laravel-elixir/ingredients/commands/Utilities'),
-    notifications = require('laravel-elixir/ingredients/commands/Notification'),
-    livereload = require('gulp-livereload');
+    Elixir = require('laravel-elixir'),
+    livereload = require('gulp-livereload'),
+    config = Elixir.config,
+    GulpPaths = require('laravel-elixir').GulpPaths;
+Task = Elixir.Task;
 
-elixir.extend('livereload', function (src) {
 
-    var config = this,
-        defaultSrc = [
-            'app/**/*',
-            'public/**/*',
-            'resources/views/**/*'
-        ];
+Elixir.extend('livereload', function (src) {
 
+    defaultSrc = [
+        'app/**/*',
+        'public/**/*',
+        'resources/views/**/*'
+    ];
 
     src = src || defaultSrc;
 
@@ -23,11 +23,7 @@ elixir.extend('livereload', function (src) {
             livereload.changed(event.path);
         })
     }
-    gulp.task('livereload', function () {
-        livereload.listen();
-    });
 
-    this.registerWatcher('livereload');
-    return this.queueTask('livereload');
+    livereload.listen();
 
 });
