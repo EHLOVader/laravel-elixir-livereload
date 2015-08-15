@@ -4,7 +4,7 @@ var gulp = require('gulp'),
     notifications = require('laravel-elixir/ingredients/commands/Notification'),
     livereload = require('gulp-livereload');
 
-elixir.extend('livereload', function (src) {
+elixir.extend('livereload', function (src, options) {
 
     var config = this,
         defaultSrc = [
@@ -18,7 +18,7 @@ elixir.extend('livereload', function (src) {
 
     gulp.on('task_start', function (e) {
         if (e.task === 'watch') {
-            livereload.listen();
+            livereload.listen(options);
             gulp.watch(src)
                 .on('change', function (event) {
                     livereload.changed(event.path);
