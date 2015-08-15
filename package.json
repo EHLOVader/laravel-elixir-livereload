@@ -1,6 +1,6 @@
 {
   "name": "laravel-elixir-livereload",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "An elixir wrapper for livereload",
   "keywords": [
     "laravel",
@@ -10,7 +10,7 @@
   ],
   "author": {
     "name": "Joseph Richardson",
-    "email": "",
+    "email": "j4h.r8n@gmail.com",
     "url": "https://github.com/EHLOVader"
   },
   "repository": {
