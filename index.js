@@ -10,7 +10,8 @@ elixir.extend('livereload', function (src, options) {
         defaultSrc = [
             'app/**/*',
             'public/**/*',
-            'resources/views/**/*'
+            'resources/views/**/*',
+            '!**/*.map'
         ];
 
 
