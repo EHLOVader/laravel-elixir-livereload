@@ -26,12 +26,12 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "gulp": "^3.8.8",
-    "gulp-livereload": "^3.8.0",
-    "gulp-util": "~2.2.0"
+    "gulp": "^3.9.1",
+    "gulp-livereload": "^3.8.1",
+    "gulp-util": "~3.0.7"
   },
   "peerDependencies": {
-    "laravel-elixir": "^5.0"
+    "laravel-elixir": "^6.0.0-11"
   },
   "engines": {
     "node": ">=0.8.0",
